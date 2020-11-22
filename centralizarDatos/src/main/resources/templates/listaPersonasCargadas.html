@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text="${titulo}"></title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+	crossorigin="anonymous">
+</head>
+<body>
+
+	<h1 th:text="${titulo}"></h1>
+
+	<div class="form-group">
+		<table class="table table-striped" border="1">
+			<thead class="thead-dark">
+				<tr>
+					<th>ID-Factura</th>
+					<th>Estado Pago</th>
+					<th>ID-Cliente</th>
+					<th>Fecha</th>
+					<th>ID-Product</th>
+					<th>Cantidad</th>
+					<th>Total</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="registro: ${listaVentas}">
+					<th scope="row" th:text="${registro.facturaId}"></th>
+					<td th:text="${registro.estadoPago}"></td>
+					<td th:text="${registro.cliente}"></td>
+					<td th:text="${registro.fecha}"></td>
+					<td th:text="${registro.producto}"></td>
+					<td th:text="${registro.cantidad}"></td>
+					<td th:text="${registro.total}"></td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+</body>
+</html>
